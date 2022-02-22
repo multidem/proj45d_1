@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+td {
+    border: 1px solid #a88353;
+    text-align: center;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
+
+tr:nth-child(even) {
+    background: crimson;
+}
+
+tr:nth-child(odd) {
+    background: teal;
+}
+
+img {
+    width: 150px;
+}
+
+    </style>
+
+</head>
+<body>
+        <div id="tab1"></div>
+
+    <script>
+let x = prompt("Введите кол-во столбцов:");
+let y = prompt("Введите кол-во строк:");
+
+       let count = 1, number = 0;
+       let tab = "<table><tbody>";
+
+       for (i=1; i<=y; i++) {
+        
+        tab += "<tr>";
+
+    for (j=1; j<=x; j++) {
+        if(number++ >= 10) number = 1;
+    tab += `
+    <td><a href="link${count}.html">
+    <img src="images/${number}.png"><br>
+    Ячейка ${count++}</a>
+    </td>
+    `;
+    }
+
+    // for (j=1, count=1; j<=x; j++, count++) 
+    // tab += `<td><a href="link${count}.html">Ячейка ${count}</a></td>`;
+
+        // Обычный и префиксный инкремент:
+        // count++ - обычный инкремент (вначале вывод значения, потм вычисление)
+        // ++count - префиксный (вначале вычисление, потм вывод значения)
+
+    // Добавить в каждую ячейку гиперссылку link1.html, link2.html, link3.html... linkn.html.
+    // <a href=""></a>
+
+    
+        tab += "</tr>";
+
+       }
+
+       tab += "</tbody></table>";  
+
+       tab1.innerHTML = tab;
+    </script>
+
+    
+
+    <!-- <table>
+        <tbody>
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+
+        <tr>
+            <td>Ячейка 1</td>
+            <td>Ячейка 2</td>
+            <td>Ячейка 3</td>
+            <td>Ячейка 4</td>
+            <td>Ячейка 5</td>
+        </tr>
+
+    </tbody>
+    </table> -->
+
+
+</body>
+</html>
